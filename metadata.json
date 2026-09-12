@@ -1,0 +1,6 @@
+{
+  "name": "NEETBio Hub",
+  "description": "NCERT-aligned NEET Biology LMS with micro-learning blocks, chapter mastery tracking, and PYQ alerts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

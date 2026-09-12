@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public read access so students can load syllabus capsules & notices
+    match /{document=**} {
+      allow read: if true;
+      // Allow write if authenticated OR if marked with instructor role (handling both new and existing documents)
+      allow write: if request.auth != null || 
+        (request.resource != null && request.resource.data.authorRole == 'instructor') ||
+        (resource != null && resource.data.authorRole == 'instructor');
+    }
+  }
+}

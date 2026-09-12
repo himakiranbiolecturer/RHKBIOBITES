@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "MicroCard": {
+      "title": "MicroCard",
+      "description": "Biology revision micro-learning card for NEET syllabus",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "chapterId": { "type": "string" },
+        "subLessonId": { "type": "string" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "highYieldTag": { "type": "string" },
+        "estimatedReadTime": { "type": "string" },
+        "ncertUnit": { "type": "string" },
+        "ncertClass": { "type": "string" },
+        "authorEmail": { "type": "string" },
+        "authorRole": { "type": "string" }
+      },
+      "required": ["id", "title", "chapterId"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Notice and revision update for NEET biology students",
+      "type": "object",
+      "properties": {
+        "content": { "type": "string" },
+        "type": { "type": "string" },
+        "author": { "type": "string" },
+        "authorRole": { "type": "string" }
+      },
+      "required": ["content"]
+    }
+  },
+  "firestore": {
+    "/microCards/{cardId}": {
+      "schema": "MicroCard",
+      "description": "Published micro-learning cards"
+    },
+    "/announcements/{annId}": {
+      "schema": "Announcement",
+      "description": "Announcements and updates"
+    }
+  }
+}
